@@ -1,18 +1,18 @@
 <template>
   <nav>
-    <v-app-bar absolute color="primary" dark scroll-target="#scrolling-techniques-8">
+    <v-app-bar flat app >
       <v-app-bar-nav-icon class="grey--text" @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
-        <span class="white--text">苏打站台</span>
-        <span class="white--text ma-2 font-weight-light">SodaStation</span>
+        <span>苏打站台</span>
+        <span>SodaStation</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn text color="grey" class="ma-2">
-        <span class="white--text">退出</span>
-        <v-icon right class="white--text">mdi-exit-to-app</v-icon>
+        <span>退出</span>
+        <v-icon right>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer temporary app
+    <v-navigation-drawer app 
         v-model="drawer"
         :color="color"
         :expand-on-hover="expandOnHover"
@@ -40,14 +40,16 @@ export default {
     return {
       drawer: false,
       links: [
+        { icon: "mdi-home", text: "Home", route: "/home" },
+        { icon: "mdi-post-outline", text: "Blog", route: "/blog" },
+        { icon: "mdi-projector", text: "Gallery", route: "/gallery" },
         { icon: "mdi-test-tube", text: "Test", route: "/test" },
-        { icon: "mdi-post-outline", text: "essay", route: "/essay" },
-        { icon: "mdi-information", text: "About", route: "/about" }
+        { icon: "mdi-information", text: "About", route: "/about" },
       ],
       color: 'primary',
         right: false,
-        miniVariant: true,
-        expandOnHover: true,
+        miniVariant: false,
+        expandOnHover: false,
         background: false,
     };
   }
