@@ -5,6 +5,7 @@ import About from  './views/About.vue';
 import Test from  './views/Test.vue';
 import Gallery from  './views/Gallery.vue';
 import Blog from  './views/Blog.vue';
+import Timeline from  './views/Timeline.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -38,6 +39,11 @@ export default new Router({
             path:'/gallery',
             name:'gallery',
             component:Gallery
+        },
+        {
+            path:'/timeline',
+            name:'timeline',
+            component:Timeline
         }
 
     ]

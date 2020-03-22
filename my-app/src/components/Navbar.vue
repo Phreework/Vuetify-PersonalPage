@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar flat app >
+    <v-app-bar flat app>
       <v-app-bar-nav-icon class="grey--text" @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
         <span>苏打站台</span>
@@ -12,14 +12,15 @@
         <v-icon right>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-navigation-drawer app 
-        v-model="drawer"
-        :color="color"
-        :expand-on-hover="expandOnHover"
-        :mini-variant="miniVariant"
-        :right="right"
-        :src="bg"
-        dark>
+    <v-navigation-drawer
+      app
+      v-model="drawer"
+      :color="color"
+      :expand-on-hover="expandOnHover"
+      :mini-variant="miniVariant"
+      :right="right"
+      dark
+    >
       <v-list>
         <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-item-action>
@@ -44,13 +45,14 @@ export default {
         { icon: "mdi-post-outline", text: "Blog", route: "/blog" },
         { icon: "mdi-projector", text: "Gallery", route: "/gallery" },
         { icon: "mdi-test-tube", text: "Test", route: "/test" },
-        { icon: "mdi-information", text: "About", route: "/about" },
+        { icon: "mdi-timeline-text", text: "Timeline", route: "/timeline" },
+        { icon: "mdi-information", text: "About", route: "/about" }
       ],
-      color: 'primary',
-        right: false,
-        miniVariant: false,
-        expandOnHover: false,
-        background: false,
+      color: "primary",
+      right: false,
+      miniVariant: false,
+      expandOnHover: false,
+      background: false
     };
   }
 };
