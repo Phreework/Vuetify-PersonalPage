@@ -44,7 +44,8 @@ export default new Router({
             path:'/timeline',
             name:'timeline',
             component:Timeline
-        }
+        },
+
 
     ]
 });

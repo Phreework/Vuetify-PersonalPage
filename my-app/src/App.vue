@@ -19,3 +19,10 @@ export default {
   })
 };
 </script>
+
+<style>
+.subtitle-1{
+  margin-left: 16px;
+  margin-right: 16px;
+}
+</style>
