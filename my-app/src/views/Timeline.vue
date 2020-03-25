@@ -1,4 +1,6 @@
 <template>
+<div>
+  <heading>Timeline</heading>
   <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown" class="mx-10">
     <v-timeline-item
       v-for="(item, i) in items"
@@ -20,9 +22,13 @@
       </v-card>
     </v-timeline-item>
   </v-timeline>
+  </div>
 </template>
 <script>
 export default {
+  components:{
+     Heading: () => import('@/components/Heading'),
+  },
   data: () => ({
     items: [
       {

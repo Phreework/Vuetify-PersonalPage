@@ -7,9 +7,10 @@
         <span class="mx-2 grey--text text--darken-2">苏打站台</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text color="grey" class="ma-2">
-        <span>退出</span>
-        <v-icon right>mdi-exit-to-app</v-icon>
+      <v-btn icon v-for="media in myMedias" :key="media.id" @click.stop="toDeail(media)" :data="media">
+        <v-avatar size="30">
+          <img :src="media.src" />
+        </v-avatar>
       </v-btn>
     </v-app-bar>
     <v-navigation-drawer
@@ -29,9 +30,8 @@
           <p class="white--text subheading mt-1 text-center">PhreeSoda个人站</p>
         </v-flex>
         <v-flex class="mt-3 mb-3">
-          
-          <v-btn slot="activator" >
-            <v-icon small class = "mr-2">mdi-email</v-icon>
+          <v-btn slot="activator">
+            <v-icon small class="mr-2">mdi-email</v-icon>
             <span>获取联系方式</span>
           </v-btn>
         </v-flex>
@@ -64,12 +64,24 @@ export default {
         { icon: "mdi-timeline-text", text: "Timeline", route: "/timeline" },
         { icon: "mdi-information", text: "About", route: "/about" }
       ],
+      myMedias:[
+        {src:require("../assets/bilibili.png"),url:"https://space.bilibili.com/15047813?from=search&amp%3Bseid=11193698444244187734"},
+        {src:require("../assets/email.png"),url:"http://www.baidu.com"},
+        {src:require("../assets/twitter.png"),url:"https://twitter.com/Phree6"},
+        {src:require("../assets/ins.png"),url:"https://www.instagram.com/phreework/"},
+
+      ],
       color: "primary",
       right: false,
       miniVariant: false,
       expandOnHover: false,
       background: false
     };
+  },
+  methods: {
+    toDeail(data) {
+      window.open(data.url);
+    }
   }
 };
 </script>

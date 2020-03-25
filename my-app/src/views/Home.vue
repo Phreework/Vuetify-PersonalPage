@@ -1,14 +1,29 @@
 <template>
   <div class="home">
-    <h1 class="subtitle-1 grey--text">Home</h1>
-    <v-container class="my-5">content</v-container>
+    <banner/>
+    <Project/>
+    <goals/>
+    <testimonials/>
+    <Footer/>
   </div>
 </template>
 
 
 
 <script>
+import Banner from "../components/Banner.vue";
+import Project from "../components/Projects.vue";
+import Goals from "../components/Goals.vue";
+import Testimonials from "../components/Testimonials.vue";
+import Footer from "../components/Footer.vue";
 export default {
+  components:{
+    Banner,
+    Project,
+    Goals,
+    Testimonials,
+    Footer
+  },
   props: {
     source: String
   },
@@ -17,3 +32,4 @@ export default {
   })
 };
 </script>
+

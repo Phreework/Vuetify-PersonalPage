@@ -1,9 +1,9 @@
 
 <template>
   <div class="blog">
-    <h1 class="subtitle-1 grey--text">Blog</h1>
+    <heading>Blog</heading>
     <v-container id="goals" class="py-5" tag="section">
-      <heading>最近的文章</heading>
+      <span>最近的文章</span>
       <v-row>
         <v-col v-for="(feature, i) in features" :key="i" class="d-flex" cols="12" sm="6" md="4">
           <v-card outlined max-width="100%">
@@ -62,7 +62,7 @@ export default {
     };
   },
   components: {
-    
+     Heading: () => import('@/components/Heading'),
   },
   mounted: function() {
     console.log(this.items);
