@@ -11,7 +11,7 @@
         md="3"
       >
         <h3 class="headline mb-3">
-          Alpha Construction
+          PhreeSoda
         </h3>
         <ul class="body-1 pl-0">
           <li
@@ -51,7 +51,7 @@
         class="text-center blue-grey darken-4 pa-3"
         cols="12"
       >
-        &copy; 2019 Alpha Construction — All Rights reserved.
+        &copy; 2020 PhreeSoda — All Rights reserved.
       </v-col>
     </v-row>
   </v-footer>
@@ -61,20 +61,20 @@
   export default {
     data: () => ({
       categories: [
-        'Success Stories',
-        'Case Studies',
-        'Testimonials',
-        'Press Room',
-        'Partners',
-        'JBM Construction',
-        'Macarthy Equipment',
-        'Elite Construction Management'
+        'QQ群',
+        '微信群',
+        'Instagram',
+        'Twitter',
+        'Email',
+        'Bilibili',
+        'Pixiv',
+        'Youtube'
       ],
       company: [
-        'Services',
-        'Projects',
-        'Our Team',
-        'Commitment to the Community'
+        '博客',
+        '展柜',
+        '时间线',
+        '关于我'
       ]
     })
   }

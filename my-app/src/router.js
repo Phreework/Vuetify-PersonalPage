@@ -6,6 +6,7 @@ import Test from  './views/Test.vue';
 import Gallery from  './views/Gallery.vue';
 import Blog from  './views/Blog.vue';
 import Timeline from  './views/Timeline.vue';
+import Article from  './views/Article.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -45,7 +46,11 @@ export default new Router({
             name:'timeline',
             component:Timeline
         },
-
+        {
+            path:'/article',
+            name:'article',
+            component:Article
+        },
 
     ]
 });

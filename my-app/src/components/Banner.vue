@@ -1,7 +1,7 @@
 <template>
   <v-img
     :height="$vuetify.breakpoint.xsOnly ? '35vh' : '80vh'"
-    :gradient="[$vuetify.breakpoint.xsOnly ?'to top, rgba(5, 5, 5, .80), rgba(5, 5, 5, .80)':'to top, rgba(255, 255, 255, .10), rgba(255, 255, 255, .0)']"
+    :gradient="$vuetify.breakpoint.xsOnly ?'to top, rgba(5, 5, 5, .80), rgba(5, 5, 5, .80)':'to top, rgba(255, 255, 255, .10), rgba(255, 255, 255, .0)'"
     src="../assets/banner.png"
   >
     <v-container
@@ -23,7 +23,7 @@
               class="mb-4  white--text"
               :class="[$vuetify.breakpoint.xsOnly ? 'headline' : 'display-2 font-weight-light']"
             >
-              一名自由网络艺术家
+              游戏|音乐|绘画|写作
             </div>
 
             <v-responsive

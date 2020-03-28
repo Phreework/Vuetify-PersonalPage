@@ -29,7 +29,6 @@
             <div>{{event.content}}</div>
           </v-flex>
         </v-layout>
-<vboilerplate></vboilerplate>
         <v-divider class="mb-2"></v-divider>
       </v-card>
     </v-container>
@@ -54,7 +53,6 @@ export default {
         .get(url + "/searchTimeLine")
         .then(response => {
           console.log(response);
-          console.log("events", this.events);
           this.events = response.data;
           this.loading = false;
         })

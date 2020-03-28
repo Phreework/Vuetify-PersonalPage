@@ -1,0 +1,567 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>《了不起的盖茨比》</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="900ac9ae-6add-40fe-b9b7-2684ecf40ac1" class="page sans"><header><img class="page-cover-image" src="Untitled%2010/classic-books-ftr.jpg" style="object-position:center 50%"/><h1 class="page-title">《了不起的盖茨比》</h1><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th>Author</th><td><span class="selected-value">弗·司各特·菲茨杰拉德</span></td></tr><tr class="property-row property-row-url"><th>Link</th><td></td></tr><tr class="property-row property-row-select"><th>Score /5</th><td><span class="selected-value">⭐️⭐️⭐️⭐️⭐️</span></td></tr><tr class="property-row property-row-text"><th>Summary</th><td></td></tr><tr class="property-row property-row-multi_select"><th>Type</th><td><span class="selected-value">爵士文学</span><span class="selected-value">美国文学</span></td></tr><tr class="property-row property-row-text"><th>主题</th><td>最喜欢的翻译作品</td></tr><tr class="property-row property-row-number"><th>挑战天数</th><td>12</td></tr></tbody></table></header><div class="page-body"><p id="6a271095-259e-4709-ac17-60b21774d305" class="">#30天推书挑战#</p><h1 id="8e54884d-1b0e-4036-9627-9425aebf205f" class="">Day12-最喜欢的翻译作品</h1><p id="2223807e-d5b6-40c0-8b37-bdec55dbcbbf" class="">《了不起的盖茨比》弗·司各特·菲茨杰拉德</p><hr id="754dd0f2-585e-4de3-ad7c-36cf6b5bb1d0"/><p id="2f22ad08-ab77-4cd1-ba98-100c805f18a8" class="">故事·纸醉金迷</p><p id="3f4fe458-00ba-4b28-9fc8-c2ee178a9b74" class="">20世纪20年代的美国，空气里弥漫着欢歌与纵饮的气息。一位新晋的神秘富豪盖茨比，经常在家举办奢华派对，一时成为顶级社交圈的焦点。</p><p id="be5b684d-6790-4526-8fdf-2108c5ff365b" class="">一个偶然的机会，穷职员尼克闯人了挥金如土的大富翁盖茨比隐秘的世界，惊讶地发现，这位富豪内心惟一的牵绊，竟是自己的表妹，已为人妇的黛西。</p><p id="bf2ff47f-944f-41b1-8f4e-08ab502fc325" class="">盖茨比还是穷小子的时候，曾与黛西许下誓言。如今，他不择手段获得了财富，谋划着一步步重新赢回黛西的爱。</p><p id="83f4ea9c-a31e-4576-9f35-1ff660d82a2f" class="">然而，冰冷的现实容不下飘渺的梦，到头来，盖茨比心中的女神只不过是凡尘俗世的物质女郎。</p><p id="30d379c5-c3fd-487f-be01-2fbffee3728d" class="">当一切真相大白，盖茨比的悲剧人生在残酷的背叛下落下帷幕。</p><p id="ec3d2b1b-d58c-4e91-89b0-0bbd6334b2f2" class="">一阕华丽的“爵士时代”的挽歌，在菲茨杰拉德笔下，如诗如梦，在美国当代文学史上留下了墨色浓重的印痕。</p><p id="57d4b1c2-6f41-4275-96b0-7e3f84388c01" class="">
+</p><p id="8060085d-cfdf-4c58-95cb-ddf145e6d795" class="">文脉·爵士挽歌</p><p id="5a43ad71-2974-4f8a-94d0-ea1ea9cf23ab" class="">那么问题来了，评论都这样写，但什么是“爵士时代”的挽歌？</p><p id="ddb8fe3b-12d1-4a0f-924d-2eb2304e3d40" class="">江是一个有趣的概念，几乎很少有人真正理解江。一座山上的积雪融化，汇聚成流，能够跨越万里土地，奔流过数个平原，湖泊，分化出密密麻麻的支流，最终汇入大海。而看江的人，能有多少人真正见过它的起源呢。于是，逆流而上旅行雪山，追求江的起源，成为了一种浪漫。</p><p id="2a125474-224e-4946-8a90-871fa1cede9b" class="">文学也是一样，我不是从盖茨比开始看盖茨比的。最先得知这本书的名字，是初中时读《挪威的森林》。在《挪威的森林》中，主角渡边时不时就“拿起《了不起的盖茨比》”读，来打发时间。当时的我不知这本书的来头，甚至没有动过念头去搜索一下。</p><p id="02e73593-44ee-4e02-a6fe-9365ec864975" class="">高中的课堂上，我开始看更多村上春树的小说，在其作品《寻羊冒险记》中，我得知了村上很喜欢雷蒙德钱德勒这位美国作家，并将自己在创作时使用的一种思维方式，称为钱德勒方法。</p><p id="ae149465-5d9f-474e-b281-442330ee4f5c" class="">出于好奇，我买了雷蒙德钱德勒最为出名的作品——《漫长的告别》，来一探究竟。有趣的是，这本书恰有村上春树作序，这篇序言竟写了整整30多页。而我也不可抑制的喜欢上了《漫长的告别》，这是一本近乎完美的小说，也是侦探小说门类下罕有能被称为“经典文学”的作品。钱德勒的写作，有两处特质最为人称道，一是不写心理描写，而从人物行为侧面表现心理活动的“心理黑匣子”；二是惊人华丽的语句，仿佛文字本身在自我表达一般。</p><p id="b1def964-b65c-490b-95a6-df714be36182" class="">就是在村上春树为《漫长的告别》所作的序中，我得知这本书是钱德勒版本的《了不起的盖茨比》。终于在大学的某一天，从陈了厚厚一层灰的书架中取来了这本书。只翻了几页，就被那华丽流畅的辞藻淹没了，这是我在《漫长的告别》中见过的，单看文笔，菲兹杰拉德应该更胜钱德勒一筹。</p><p id="b49de92d-ba08-466c-89dc-4772f880a44a" class="">比起看《挪威的森林》以及《漫长的告别》，看完《了不起的盖茨比》，我并没有得到特别强烈的重要性感受，只是合上书，心满意足的把它放回到架子上。</p><p id="4062df69-fee7-4200-a0ed-857abe1a3e56" class="">因为已经看过其他顶级作家对其领会后写出的精神续作，所以我没有对其中的任何技法所震撼。但，看完《了不起的盖茨比》，我开始能够感受到书与书，作家与作家之间的“Connection”。</p><p id="92d1aa74-460f-4955-bac9-71a3657d4b98" class="">正是《了不起的盖茨比》里，尼克与盖茨比的友情，</p><p id="fb964b70-e7b2-4a26-af93-a9746e8f1495" class="">塑造了《漫长的告别》中马洛与沦落克斯间的友情，</p><p id="7e83e3e3-3033-4f33-bb1e-2ad19b0e63b3" class="">也塑造了《且听风吟》中主人公与鼠的友情。</p><p id="5db0d58c-f730-4e44-bf0b-395bfc7ab775" class="">也正是菲兹杰拉德的华丽文笔，</p><p id="dd10980f-2eb6-4dd2-8fb2-48dd669c4594" class="">成就了雷蒙德钱德勒的华丽文笔，</p><p id="fde5ce24-b223-4e78-974f-af66cf5d45e3" class="">启发了村上春树爽快干净的文笔。</p><p id="cc2ab2a6-6561-41cf-85fa-fcd9e858a0cb" class="">而正如旅行者见过江流，想要溯其源头，</p><p id="80df95a7-c2d4-4ad5-8804-421c70a097f0" class="">读者见过了传承之作，也想要顺着文脉，寻其原点。</p><p id="4e010c3a-6b4f-4d04-92a3-343e3310ca7a" class="">所以要我说，《了不起的盖茨比》不仅是“爵士时代的挽歌”，更是“后爵士时代的国歌”。</p><p id="79383402-0749-46fe-803d-fbdc4e6e7781" class="">现在，来自唐古拉山脉的江水，也继续绵延，直奔大海。</p><p id="40637fd7-a9b6-4aec-a690-e27c110cfb11" class="">
+</p></div></article></body></html>
