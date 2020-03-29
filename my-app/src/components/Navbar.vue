@@ -60,9 +60,9 @@ export default {
         { icon: "mdi-home", text: "Home", route: "/home" },
         { icon: "mdi-post-outline", text: "Blog", route: "/blog" },
         { icon: "mdi-projector", text: "Gallery", route: "/gallery" },
-        { icon: "mdi-test-tube", text: "Test", route: "/test" },
         { icon: "mdi-timeline-text", text: "Timeline", route: "/timeline" },
-        { icon: "mdi-information", text: "About", route: "/about" }
+        { icon: "mdi-information", text: "About", route: "/about" },
+        { icon: "mdi-test-tube", text: "Test", route: "/test" },
       ],
       myMedias:[
         {src:require("../assets/bilibili.png"),url:"https://space.bilibili.com/15047813?from=search&amp%3Bseid=11193698444244187734"},
@@ -71,7 +71,7 @@ export default {
         {src:require("../assets/ins.png"),url:"https://www.instagram.com/phreework/"},
 
       ],
-      color: "primary",
+      color: "cyan darken-4",
       right: false,
       miniVariant: false,
       expandOnHover: false,

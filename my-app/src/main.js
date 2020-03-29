@@ -2,7 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import router from './router'
-
+import config from './config'
+Vue.use(config)
 Vue.config.productionTip = false
 //全局注册自定义指令
 Vue.directive('exchangeHtml',{      

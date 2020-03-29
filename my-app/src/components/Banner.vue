@@ -1,7 +1,7 @@
 <template>
   <v-img
     :height="$vuetify.breakpoint.xsOnly ? '35vh' : '80vh'"
-    :gradient="$vuetify.breakpoint.xsOnly ?'to top, rgba(5, 5, 5, .80), rgba(5, 5, 5, .80)':'to top, rgba(255, 255, 255, .10), rgba(255, 255, 255, .0)'"
+    :gradient="$vuetify.breakpoint.smAndDown ?'to top, rgba(5, 5, 5, .80), rgba(5, 5, 5, .80)':'to top, rgba(255, 255, 255, .10), rgba(255, 255, 255, .0)'"
     src="../assets/banner.png"
   >
     <v-container

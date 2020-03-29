@@ -8,7 +8,7 @@ export default new Vuetify({
         iconfont:'md',
         themes: {
             light: {
-                primary: '#9652ff',
+                primary: '#006064',
                 success: '#3cd1c2',
                 info: '#ffaa2c',
                 error: '#f83e70'

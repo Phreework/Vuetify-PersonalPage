@@ -1,7 +1,7 @@
 
 <template>
   <div class="blog">
-    <heading>Blog</heading>
+    <heading>我的文章</heading>
     <v-container id="goals" class="py-5" tag="section">
       <span>最近的文章</span>
       <v-row>
