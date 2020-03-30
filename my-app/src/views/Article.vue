@@ -1,8 +1,8 @@
 <template>
-  <div class="gallery">
-    <h1 class="subtitle-1 grey--text">Article</h1>
+  <div class="article">
+    <h1 class="subtitle-1 grey--text">article</h1>
     <v-container class="my-5">
-      <div class="vcontent" ref="vcontent" v-exchangeHtml:foo="content"></div>
+      <div class="vcontent" ref="vcontent"></div>
     </v-container>
   </div>
 </template>
@@ -11,8 +11,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      content: "",
-      src: require("../assets/goals/goals1.jpg")
+      essayData:{},
     };
   },
   methods: {
@@ -47,7 +46,8 @@ export default {
           console.log("response", response.data);
           // let result = new fs.ReadStream(response.data);
           // console.log(result);
-          document.getElementsByClassName("page-cover-image")[0].src = response.data;
+          document.getElementsByClassName("page-cover-image")[0].src =
+            response.data;
           // let imgSrc =
           //   "data:image/png;base64," +
           //   btoa(
@@ -69,11 +69,24 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+    },
+    getEssayData() {
+      this.axios
+        .get(this.baseUrl + "/getEssayInfo",{
+          params: { name: this.$route.query.name }
+        })
+        .then(response => {
+          this.essayData = response.data;
+          this.$refs.vcontent.innerHTML += this.essayData.content;
+          document.getElementsByClassName("page-cover-image")[0].src =this.essayData.url;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   },
   created: function() {
-    this.getContentData();
-    this.getCoverData();
+    this.getEssayData();
   }
 };
 </script>
