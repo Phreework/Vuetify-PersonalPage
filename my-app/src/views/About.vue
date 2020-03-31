@@ -17,7 +17,7 @@
               class="mb-5"
             >如果你有成熟的企划，需要一名对程序，设计，艺术有着整全考量的专家，请与我联系；<br />如果你需要游戏开发的建议和帮助，也可与我联系，非常乐意提供一些无偿的咨询；<br />如果你需要开发辅助设计的工具，需要提供设计和开发，也请与我联系，在开发插件方面，我亦有多年经验。</p>
 
-            <v-btn outlined color="primary" class="px-5" large>与我联系</v-btn>
+            <v-btn outlined color="primary" class="px-5" large @click="popContactCard">与我联系</v-btn>
           </v-col>
           <v-col cols="12" md="5" offset-md="1">
             <v-card class = "mt-10">
@@ -61,6 +61,11 @@
 export default {
   components: {
        Heading: () => import('@/components/Heading'),
+  },
+  methods:{
+    popContactCard() {
+      this.bus.$emit("isContactCardView", true);
+    }
   },
   data: () => ({
     highlights: [

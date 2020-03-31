@@ -37,6 +37,7 @@
               large
               class="px-5"
               color="primary"
+              @click="popContactCard"
             >
               与我合作
             </v-btn>
@@ -70,6 +71,11 @@
           case 'Work': return 'My Work'
           default: return ''
         }
+      }
+    },
+    methods:{
+      popContactCard(){
+        this.bus.$emit("isContactCardView",true);
       }
     }
   }

@@ -78,7 +78,9 @@ export default {
         .then(response => {
           this.essayData = response.data;
           this.$refs.vcontent.innerHTML += this.essayData.content;
-          document.getElementsByClassName("page-cover-image")[0].src =this.essayData.url;
+          let coverImg = document.getElementsByClassName("page-cover-image")[0];
+          if (coverImg)
+            coverImg.src =this.essayData.url;
         })
         .catch(function(error) {
           console.log(error);
@@ -92,6 +94,10 @@ export default {
 </script>
 
 <style scoped>
+.vcontent{
+  max-width: 800px;
+  margin:0 auto
+}
 html {
   -webkit-print-color-adjust: exact;
 }

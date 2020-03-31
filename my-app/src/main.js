@@ -4,9 +4,11 @@ import vuetify from './plugins/vuetify';
 import router from './router'
 import config from './config'
 import heading from "./components/Heading.vue";
+import contactCard from "./components/Contactcard.vue";
 Vue.use(config)
 Vue.config.productionTip = false
 Vue.component("heading",heading)
+Vue.component("contactCard",contactCard)
 //全局注册自定义指令
 Vue.directive('exchangeHtml',{      
   bind: function(el,foo){

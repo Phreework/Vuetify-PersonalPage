@@ -3,14 +3,39 @@
   <div class="blog">
     <heading>我的文章</heading>
     <v-container id="goals" class="py-5" tag="section">
-      <span>最近的文章</span>
+      <v-row class="my-5">
+        <v-btn small text color="grey" @click="changeToLineView()">
+          <v-icon left small>mdi-timeline-clock</v-icon>
+          <span class="caption text-lowercase">最近的文章</span>
+        </v-btn>
+        <v-btn small text color="grey" @click="changeToCardView()">
+          <v-icon left small>mdi-card-text</v-icon>
+          <span class="caption text-lowercase">全部文章</span>
+        </v-btn>
+      </v-row>
       <v-row>
         <v-col v-for="(feature, i) in features" :key="i" class="d-flex" cols="12" sm="6" md="4">
-          <v-card outlined max-width="100%" @click="navToArticlePage(feature.name)">
-            <v-img :src="feature.url" height="200" />
-            <v-card-title class="align-start" style="min-height: 88px;" v-text="feature.name" />
-            <v-card-text class="pb-5 pt-3" v-text="feature.summary" />
-          </v-card>
+          <v-hover v-slot:default="{ hover }">
+            <v-card
+              :elevation="hover ? 8 : 2"
+              class="mx-auto"
+              width="365"
+              height="390"
+              @click="navToArticlePage(feature.name)"
+            >
+              <v-img :src="feature.url"  max-height="200" :aspect-ratio="365/350"/>
+              <v-btn v-for="(tag, j) in feature.tagList" :key="j" text color="red" @click.stop>
+                <span>{{tag}}</span>
+              </v-btn>
+              <v-divider class="mx-4"></v-divider>
+              <v-card-title
+                class="align-start font-weight-bold"
+                style="min-height: 44px;"
+                v-text="feature.name"
+              />
+              <v-card-subtitle class="pb-5 pt-3" v-text="feature.summary" />
+            </v-card>
+          </v-hover>
         </v-col>
       </v-row>
     </v-container>
@@ -64,7 +89,7 @@ export default {
     navToArticlePage(name) {
       this.$router.push({
         path: "/article", //或者路径跳转path: '/addCreditCards',
-        query: {name}
+        query: { name }
       });
     },
     getEssayListData() {

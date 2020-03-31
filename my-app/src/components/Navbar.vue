@@ -7,7 +7,13 @@
         <span class="mx-2 grey--text text--darken-2">苏打站台</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon v-for="media in myMedias" :key="media.id" @click.stop="toDeail(media)" :data="media">
+      <v-btn
+        icon
+        v-for="media in myMedias"
+        :key="media.id"
+        @click.stop="toDeail(media)"
+        :data="media"
+      >
         <v-avatar size="30">
           <img :src="media.src" />
         </v-avatar>
@@ -30,7 +36,7 @@
           <p class="white--text subheading mt-1 text-center">PhreeSoda个人站</p>
         </v-flex>
         <v-flex class="mt-3 mb-3">
-          <v-btn slot="activator">
+          <v-btn slot="activator" @click="popContactCard">
             <v-icon small class="mr-2">mdi-email</v-icon>
             <span>获取联系方式</span>
           </v-btn>
@@ -48,6 +54,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <contact-card />
   </nav>
 </template>
 <script>
@@ -57,19 +64,28 @@ export default {
     return {
       drawer: false,
       links: [
-        { icon: "mdi-home", text: "Home", route: "/home" },
-        { icon: "mdi-post-outline", text: "Blog", route: "/blog" },
-        { icon: "mdi-projector", text: "Gallery", route: "/gallery" },
-        { icon: "mdi-timeline-text", text: "Timeline", route: "/timeline" },
-        { icon: "mdi-information", text: "About", route: "/about" },
-        { icon: "mdi-test-tube", text: "Test", route: "/test" },
+        { icon: "mdi-home", text: "主页", route: "/home" },
+        { icon: "mdi-post-outline", text: "文章", route: "/blog" },
+        { icon: "mdi-projector", text: "画廊", route: "/gallery" },
+        { icon: "mdi-timeline-text", text: "时间线", route: "/timeline" },
+        { icon: "mdi-information", text: "关于我", route: "/about" },
+        { icon: "mdi-test-tube", text: "实验功能", route: "/test" }
       ],
-      myMedias:[
-        {src:require("../assets/bilibili.png"),url:"https://space.bilibili.com/15047813?from=search&amp%3Bseid=11193698444244187734"},
-        {src:require("../assets/email.png"),url:"http://www.baidu.com"},
-        {src:require("../assets/twitter.png"),url:"https://twitter.com/Phree6"},
-        {src:require("../assets/ins.png"),url:"https://www.instagram.com/phreework/"},
-
+      myMedias: [
+        {
+          src: require("../assets/bilibili.png"),
+          url:
+            "https://space.bilibili.com/15047813?from=search&amp%3Bseid=11193698444244187734"
+        },
+        { src: require("../assets/email.png"), url: "http://www.baidu.com" },
+        {
+          src: require("../assets/twitter.png"),
+          url: "https://twitter.com/Phree6"
+        },
+        {
+          src: require("../assets/ins.png"),
+          url: "https://www.instagram.com/phreework/"
+        }
       ],
       color: "cyan darken-4",
       right: false,
@@ -81,6 +97,9 @@ export default {
   methods: {
     toDeail(data) {
       window.open(data.url);
+    },
+    popContactCard() {
+      this.bus.$emit("isContactCardView", true);
     }
   }
 };
