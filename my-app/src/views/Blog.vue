@@ -4,11 +4,11 @@
     <heading>我的文章</heading>
     <v-container id="goals" class="py-5" tag="section">
       <v-row class="my-5">
-        <v-btn small text color="grey" @click="changeToLineView()">
+        <v-btn small text color="grey" @click="changeToNewView()">
           <v-icon left small>mdi-timeline-clock</v-icon>
-          <span class="caption text-lowercase">最近的文章</span>
+          <span class="caption text-lowercase">最新文章</span>
         </v-btn>
-        <v-btn small text color="grey" @click="changeToCardView()">
+        <v-btn small text color="grey" @click="changeToAllView()">
           <v-icon left small>mdi-card-text</v-icon>
           <span class="caption text-lowercase">全部文章</span>
         </v-btn>
@@ -42,7 +42,9 @@
   </div>
 </template>
 <script>
+
 export default {
+
   data() {
     return {
       features: [
@@ -86,6 +88,14 @@ export default {
   },
 
   methods: {
+    changeToAllView(){
+      if (this.features)
+        this.features.reverse();
+    },
+    changeToNewView(){
+      if (this.features)
+        this.features.reverse();
+    },
     navToArticlePage(name) {
       this.$router.push({
         path: "/article", //或者路径跳转path: '/addCreditCards',

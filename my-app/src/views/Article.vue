@@ -3,12 +3,13 @@
     <h1 class="subtitle-1 grey--text">article</h1>
     <v-container class="my-5">
       <div class="vcontent" ref="vcontent"></div>
+    
     </v-container>
   </div>
 </template>
 <script>
-import axios from "axios";
 export default {
+
   data() {
     return {
       essayData:{},
@@ -18,7 +19,7 @@ export default {
     getContentData() {
       var url = "http://localhost:3000";
 
-      axios
+      this.axios
         .get(url + "/searchArticle")
         .then(response => {
           console.log(response);
@@ -35,7 +36,7 @@ export default {
     getCoverData() {
       var url = "http://localhost:3000";
 
-      axios
+      this.axios
         .get(url + "/getImageUrl", {
           params: { name: "11" }
         })

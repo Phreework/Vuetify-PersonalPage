@@ -7,6 +7,7 @@ import Gallery from  './views/Gallery.vue';
 import Blog from  './views/Blog.vue';
 import Timeline from  './views/Timeline.vue';
 import Article from  './views/Article.vue';
+import Project from  './views/Project.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -51,6 +52,10 @@ export default new Router({
             name:'article',
             component:Article
         },
-
+        {
+            path:'/project',
+            name:'project',
+            component:Project
+        },
     ]
 });
