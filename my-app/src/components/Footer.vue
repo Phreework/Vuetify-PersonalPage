@@ -51,7 +51,7 @@
         class="text-center blue-grey darken-4 pa-3"
         cols="12"
       >
-        &copy; 2020 PhreeSoda — All Rights reserved.
+        &copy; 2020 PhreeSoda — <a url="http://www.beian.miit.gov.cn/">鄂ICP备20004400号</a>
       </v-col>
     </v-row>
   </v-footer>
@@ -63,12 +63,12 @@
       categories: [
         'QQ群',
         '微信群',
-        'Instagram',
-        'Twitter',
+        // 'Instagram',
+        // 'Twitter',
         'Email',
         'Bilibili',
-        'Pixiv',
-        'Youtube'
+        // 'Pixiv',
+        // 'Youtube'
       ],
       company: [
         '博客',

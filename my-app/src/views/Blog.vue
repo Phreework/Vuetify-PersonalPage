@@ -107,7 +107,8 @@ export default {
         .get(this.baseUrl + "/getEssayList")
         .then(response => {
           this.features = response.data;
-          console.log(response.data);
+          this.features.reverse();
+          //console.log(response.data);
         })
         .catch(function(error) {
           console.log(error);

@@ -3,8 +3,9 @@
     <v-app-bar elevate-on-scroll app>
       <v-app-bar-nav-icon class="grey--text" @click="drawer=!drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-uppercase grey--text">
-        <span>SodaStation</span>
-        <span class="mx-2 grey--text text--darken-2">苏打站台</span>
+        <span>苏打的个性生活</span>
+        <!-- <span>SodaStation</span> -->
+        <!-- <span class="mx-2 grey--text text--darken-2">苏打站台</span> -->
       </v-toolbar-title>
       <v-btn text v-for="link in links2" :key="link.text" router :to="link.route">
         <v-icon class="grey--text text--darken-2">{{ link.icon }}</v-icon>
@@ -12,7 +13,7 @@
       </v-btn>
       <v-spacer></v-spacer>
 
-      <v-btn
+      <!-- <v-btn
         icon
         v-for="media in myMedias"
         :key="media.id"
@@ -22,7 +23,7 @@
         <v-avatar size="30">
           <img :src="media.src" />
         </v-avatar>
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
     <v-navigation-drawer
       app
@@ -36,7 +37,7 @@
       <v-layout column align-center>
         <v-flex class="mt-5 text-center">
           <v-avatar size="80">
-            <img src="../assets/images.jpg" />
+            <img src="../assets/PhreeSodaLogo.png" />
           </v-avatar>
           <p class="white--text subheading mt-1 text-center">PhreeSoda个人站</p>
         </v-flex>
@@ -76,7 +77,7 @@ export default {
       links: [
         { icon: "mdi-home", text: "主页", route: "/home" },
         { icon: "mdi-post-outline", text: "文章", route: "/blog" },
-        { icon: "mdi-projector", text: "项目", route: "/project" },
+        // { icon: "mdi-projector", text: "项目", route: "/project" },
         { icon: "mdi-timeline-text", text: "时间线", route: "/timeline" },
         { icon: "mdi-test-tube", text: "实验功能", route: "/test" },
         { icon: "mdi-information", text: "关于我", route: "/about" }
@@ -84,9 +85,9 @@ export default {
             links2: [
         { icon: "mdi-home", text: "主页", route: "/home" },
         { icon: "mdi-post-outline", text: "文章", route: "/blog" },
-        { icon: "mdi-projector", text: "项目", route: "/project" },
+        // { icon: "mdi-projector", text: "项目", route: "/project" },
         { icon: "mdi-timeline-text", text: "时间线", route: "/timeline" },
-        { icon: "mdi-information", text: "关于我", route: "/about" }
+        { icon: "mdi-information", text: "关于", route: "/about" }
       ],
       myMedias: [
         {

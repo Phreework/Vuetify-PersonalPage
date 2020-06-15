@@ -1,7 +1,7 @@
 <template>
-  <div class="article">
+  <div class="white article">
     <h1 class="subtitle-1 grey--text">article</h1>
-    <v-container class="my-5">
+    <v-container class=" my-5">
       <div class="vcontent" ref="vcontent"></div>
     
     </v-container>
@@ -17,10 +17,9 @@ export default {
   },
   methods: {
     getContentData() {
-      var url = "http://localhost:3000";
 
       this.axios
-        .get(url + "/searchArticle")
+        .get(this.baseUrl + "/searchArticle")
         .then(response => {
           console.log(response);
           this.content = response.data[0].content;
@@ -34,10 +33,9 @@ export default {
         });
     },
     getCoverData() {
-      var url = "http://localhost:3000";
 
       this.axios
-        .get(url + "/getImageUrl", {
+        .get(this.baseUrl + "/getImageUrl", {
           params: { name: "11" }
         })
         .then(response => {
@@ -96,7 +94,7 @@ export default {
 
 <style scoped>
 .vcontent{
-  max-width: 800px;
+  max-width: 1200px;
   margin:0 auto
 }
 html {
@@ -480,8 +478,12 @@ code {
   font-size: 85%;
   tab-size: 2;
 }
-
+.vcontent >>> code:after,code:before{
+  content:"" ;
+}
 .vcontent >>> code {
+
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0, 0, 0, 0), 0px 1px 3px 0px rgba(0, 0, 0, 0);
   color: #eb5757;
 }
 
